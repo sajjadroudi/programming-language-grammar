@@ -1,0 +1,22 @@
+import counter;
+
+class MyCounter {
+    private var counter = 0;
+    public MyCounter(Int initialValue = 0) {
+        this.counter = initialValue;
+        this.startCounting();
+    }
+
+    private void startCounting() {
+        try {
+            for(it = 0; it < this.valuel;it++) {
+                this.setCounter(this.counter + 1);
+                console.log("Counter ${this.counter}");
+            }
+        } on NegativeValue catch(Exception){
+            this.print("Counter has negative value");
+        } catch(Exeption) {
+            this.print("Unexpected exception", Exception);
+        }
+    }
+}

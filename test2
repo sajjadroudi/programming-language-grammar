@@ -1,0 +1,14 @@
+import math;
+from math import Random.rand;
+
+class Main {
+    public Main() {
+        const scanner = Scanner();
+        const xInput = scanner.input;
+        const yInput = scanner.input;
+    }
+    Int getArea(Int xInput = 5, Int yInput = 5){
+        const result = xInput * yInput;
+        return result;
+    }
+}

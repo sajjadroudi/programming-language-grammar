@@ -1,0 +1,36 @@
+import Writer.FileWriter;
+from Scanner.Utils import scanner;
+
+class Downloader {
+
+    private var url : String;
+    private var duration : Float = 0.00;
+    private var isDownloading : Boolean = false;
+
+    public Downloader(String url, Int duration) {
+        this.url = url;
+        if(duration != 0.00) {
+            this.duration = duration;
+        } else {
+            this.duration = 0.00;
+        }
+    }
+    public void toggleDownload() {
+        if(this.isDownloading) {
+            this.toggleDownload(false);
+        } elif (!this.toggleDownloading) {
+            this.toggleDownload(true);
+        }
+    }
+    private void update() {
+        if(this.isDownloading) {
+            this.duration += 10.0;
+        }
+        if(this.duration >= 5.00e-1000) {
+            alert("this file is getting download from The beginnig of creation");
+            alert("ending process due to death (maybe) of his owner");
+            return false;
+        }
+    }
+
+}

@@ -1,0 +1,39 @@
+from styles import buttonStyles => btnStyles, materialStyles => mainStyle;
+from components import *;
+from services import dmsService;
+from themes import primaryTheme => mainTheme;
+
+class Application {
+    private const components : new Component(1);
+    private const users : new Array [User] (20);
+    private const BASE_URL : String;
+    private const PORT : Int;
+    public Application(String url, String base_url, Int port) {
+       this.setPort(port);
+       this.setBaserUrl(base_url);
+       this.setUrl(url);
+    }
+    public void render () {
+        const buttonComponent = components.getButton("Primary");
+        const tableComponent = components.getTable(10, 10,"Secondary");
+        const RootElement = components.createRootElement(buttonComponent, tableComponent);
+
+        buttonComponent.styles = mainStyle.buttonCss;
+        tableComponent.styles = mainStyle.tableCss;
+        return rootElement.prepare();
+    }
+    private Int fetchData(String url = "${this.url}") {
+        try {
+           const result = fetch(url);
+           switch(result) {
+                case 1: return "STATUS 1";
+                case 2: return "STATUS 2";
+                case 3: return "STATUS 3";
+                default: return "STATUS 4";
+           }
+        }
+        catch(Exception) {
+            console.log("unexpected error ${Exception}");
+        }
+    }
+}
